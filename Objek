@@ -1,0 +1,112 @@
+package org.yourorghere;
+
+import com.sun.opengl.util.GLUT;
+import javax.media.opengl.GL;
+import javax.media.opengl.glu.GLU;
+import javax.media.opengl.glu.GLUquadric;
+
+public class Objek {
+
+    static void roda(GL gl)
+{
+    GLUT glut=new GLUT();
+   int i;
+
+ 
+   gl.glColor3f(0.0f,1.0f,1.0f);
+   for(i=0;i<12;++i)
+   {
+       gl.glPushMatrix();
+         gl.glRotatef(i*30,0.0f,0.0f,1.0f);
+         Jari2(gl);
+    
+      gl. glPopMatrix();
+   }
+
+   
+    gl.glColor3f(0.0f,0.0f,0.0f);
+    glut.glutSolidTorus(0.05f,1f,10,30);
+    gl.glColor3f(0.0f,0.0f,0.0f);
+}
+    static void tiang(GL gl){
+          Objek.Tiang1(gl);
+       gl.glTranslatef(0.0f, 0.0f, -2f);
+       Objek.Tiang2(gl);
+    }
+     static void Tabung1(GL gl) {
+        float BODY_LENGTH = 0.8f;
+        float BODY_RADIUS = 0.05f;
+        int SLICES = 30;
+        int STACKS = 30;
+        GLU glu = new GLU();
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS,
+                BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 1.0f, BODY_RADIUS, SLICES, STACKS);
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 1.0f, BODY_RADIUS, SLICES, STACKS);
+    }
+    static void Tabung(GL gl) {
+        float BODY_LENGTH = 0.8f;
+        float BODY_RADIUS = 0.15f;
+        int SLICES = 30;
+        int STACKS = 30;
+        GLU glu = new GLU();
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS,
+                BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+    }
+static void Jari2(GL gl) {
+     gl.glRotatef(-90.0f,1.0f,0.0f,0.0f);
+gl.glRotatef(180.0f,0.0f,0.0f,1.0f);
+    float BODY_LENGTH = 1f;
+        float BODY_RADIUS = 0.03f;
+        int SLICES = 30;
+        int STACKS = 30;
+        GLU glu = new GLU();
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS,
+                BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+    }
+
+static void Tiang1(GL gl) {
+    
+   
+    gl.glRotatef(90.0f,1.0f,0.0f,0.0f);
+     gl.glRotatef(45.0f,0.0f,1.0f,0.0f);
+    float BODY_LENGTH = 2f;
+        float BODY_RADIUS = 0.05f;
+        int SLICES = 30;
+        int STACKS = 30;
+        GLU glu = new GLU();
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS,
+                BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        
+    }
+static void Tiang2 (GL gl){
+        gl.glRotatef(-45.0f,0.0f,1.0f,0.0f);
+     gl.glRotatef(-45.0f,0.0f,1.0f,0.0f);
+ float BODY_LENGTH = 2f;
+        float BODY_RADIUS = 0.05f;
+        int SLICES = 30;
+        int STACKS = 30;
+        GLU glu = new GLU();
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS,
+                BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+}
+
+ }
